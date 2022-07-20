@@ -87,7 +87,8 @@ a {
 }
 
 article,
-section {
+section,
+footer {
   padding: 22px 0 56px 0;
 }
 
@@ -105,6 +106,7 @@ section {
 }
 
 .header .logo {
+  width: 100%;
   grid-column: 1/13;
   justify-self: center;
   text-align: center;
@@ -134,15 +136,31 @@ section {
   display: flex;
   gap: 16px;
 }
-.header .navbar-social img {
+.header .navbar-social .fa {
   height: 16px;
   width: 16px;
+  color: rgba(24, 0, 31, 0.54);
 }
-.header .navbar-social img:hover {
+.header .navbar-social .fa-facebook:hover {
+  color: #3471eb;
+}
+.header .navbar-social .fa- .header .navbar-social .fa:hover {
   cursor: pointer;
+  color: #F21D44;
 }
 .header .navbar-menu {
-  display: none;
+  position: fixed;
+  top: 45px;
+  right: 20px;
+}
+.header .navbar-menu span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background-color: #000000;
+}
+.header .navbar-menu span:not(:nth-child(1)) {
+  margin-top: 4px;
 }
 .header .navbar-search {
   display: inline-block;
@@ -166,12 +184,11 @@ section {
   color: #010D00;
   line-height: 1.75rem;
   font-weight: 400;
-  padding: 10px;
+  padding: 5px;
 }
 .header .nav-list a:hover {
   color: #F21D44;
-  -webkit-text-decoration: underline 1px solid #F21D44;
-          text-decoration: underline 1px solid #F21D44;
+  border-bottom: 1px solid #F21D44;
 }
 
 .col {
@@ -236,7 +253,6 @@ section {
 
 .wrapper {
   text-align: start;
-  gap: 30px;
 }
 .wrapper .hot-topic {
   display: grid;
@@ -256,6 +272,12 @@ section {
   position: relative;
   font-weight: 600;
   letter-spacing: -2%;
+}
+.wrapper .hot-topic-title .line {
+  display: inline-block;
+  height: 2px;
+  background-color: #e4e4e4;
+  min-width: 50%;
 }
 .wrapper .hot-topic-title p {
   display: flex;
@@ -284,6 +306,7 @@ section {
   position: relative;
 }
 .wrapper .hot-topic-feature img {
+  width: 100%;
   height: 100%;
   border-radius: 4px;
 }
@@ -324,8 +347,6 @@ section {
 }
 .wrapper .hot-topic .news-links {
   align-items: center;
-  max-width: 351px;
-  max-height: 107px;
   display: flex;
   gap: 10px;
 }
@@ -374,12 +395,10 @@ section {
   display: inline-block;
   height: 2px;
   background-color: rgb(228, 228, 228);
-  width: 269px;
+  width: 50%;
 }
 .fashion .feature {
   margin-top: 24px;
-  max-width: 370px;
-  max-height: 274px;
   position: relative;
 }
 .fashion .feature img {
@@ -401,7 +420,7 @@ section {
   color: white;
   font-size: 1.125rem;
   font-family: "roboto slab";
-  padding: 14PX 0 18px 0;
+  padding: 14px 0 18px 0;
 }
 .fashion .feature a:hover {
   color: #F21D44;
@@ -411,6 +430,7 @@ section {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
   bottom: 0;
   left: 0;
+  width: 100%;
   padding: 24px;
 }
 .fashion .feature-text .info {
@@ -470,7 +490,7 @@ section {
 .gallery-title .line {
   height: 1px;
   background-color: rgb(228, 228, 228);
-  width: 940px;
+  width: 50%;
 }
 .gallery-title .fa {
   padding: 6px 10px;
@@ -486,12 +506,15 @@ section {
   position: relative;
 }
 .gallery-card img {
+  width: 100%;
   border-radius: 4px;
+  aspect-ratio: 1/1;
 }
 .gallery-card-content {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 100%;
   padding: 25px;
   z-index: 20;
   color: white;
@@ -554,13 +577,11 @@ section {
   display: block;
   height: 1px;
   background-color: rgb(228, 228, 228);
-  width: 219px;
+  width: 50%;
 }
 
 .news-links {
   align-items: center;
-  max-width: 351px;
-  max-height: 107px;
   display: flex;
   gap: 10px;
 }
@@ -588,7 +609,6 @@ section {
 }
 
 .blog-container {
-  gap: 30px;
   text-align: start;
 }
 
@@ -637,13 +657,21 @@ section {
   font-family: "Lexend Deca";
   font-weight: 500;
 }
+.advertisement .btn:hover {
+  cursor: pointer;
+}
+.advertisement .btn:hover:hover {
+  cursor: pointer;
+  border-radius: 25px 0;
+  background-image: linear-gradient(to right top, red, blue);
+  color: white;
+}
 
 .overview {
   align-items: flex-start;
-  gap: 60px;
 }
 .overview .ov-links {
-  grid-column: 1/9;
+  grid-column: 1/8;
 }
 .overview-catagory {
   gap: 12px;
@@ -661,7 +689,7 @@ section {
 .overview-catagory .line {
   height: 1px;
   background-color: rgba(24, 0, 31, 0.54);
-  width: 500px;
+  width: 50%;
 }
 .overview .ov-card {
   align-items: center;
@@ -700,18 +728,24 @@ section {
   color: rgba(24, 0, 31, 0.54);
 }
 .overview .btn {
+  position: relative;
   color: #F21D44;
   border: 1px solid #F21D44;
   border-radius: 16px;
   padding: 20px 56px;
   font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
   line-height: 1.5rem;
   background-color: white;
-  margin-top: 77px;
+  margin-top: 126px;
 }
 .overview .btn:hover {
   cursor: pointer;
   font-size: 20px;
+  border-radius: 25px 0;
+  background-image: linear-gradient(to right top, red, blue);
+  color: white;
 }
 .overview .tech {
   justify-content: start;
@@ -780,11 +814,309 @@ section {
   color: rgba(24, 0, 31, 0.54);
   padding-top: 9px;
 }
-.overview .tech .tech-title {
-  margin: 50px 47px;
+.overview .tech .tech-title h4 {
+  margin: 30px 10px 20px 0;
+}
+.overview .tech .tech-title h4 .line {
+  height: 1px;
+  width: 80%;
+  color: rgba(24, 0, 31, 0.54);
 }
 .overview .tech .tech-title .line {
   height: 1px;
-  width: 150px;
+  width: 80%;
   color: rgba(24, 0, 31, 0.54);
+}
+.overview .tech .popular-catagory {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.overview .tech .popular-catagory .table {
+  padding-right: 10%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: rgb(14, 19, 43);
+}
+.overview .recent .tech-title {
+  margin-bottom: 0;
+}
+.overview .recent-post-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.overview .recent-post-card:not(:nth-child(1)) {
+  margin-top: 35px;
+}
+.overview .recent-post-card .text h4 a {
+  color: #010D00;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 9px;
+  padding: 0;
+}
+.overview .recent-post-card .text h4 a:hover {
+  color: #F21D44;
+}
+.overview .recent-post-card .text .date {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(24, 0, 31, 0.54);
+}
+.overview .recent-post-card .text .date i {
+  margin-right: 6px;
+}
+
+footer {
+  background: #010D00;
+  color: white;
+  padding-bottom: 0;
+}
+
+.footer {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-logo h1 {
+  font-size: 3.85rem;
+  color: #F21D44;
+  text-align: center;
+  font-family: "Yeseva One";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: -2%;
+  padding: 32px 0 8px 0;
+}
+.footer-logo h1:hover {
+  cursor: pointer;
+  font-size: 3.8rem;
+}
+.footer-logo span {
+  font-size: 0.75rem;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.52rem;
+  line-height: 1rem;
+}
+.footer-nav {
+  margin: 48px 0;
+  display: flex;
+  gap: 48px;
+}
+.footer-nav a {
+  color: white;
+  font-weight: 500;
+  line-height: 30px;
+  padding-bottom: 10px;
+}
+.footer-nav a:hover {
+  color: #F21D44;
+  border-bottom: 1px solid #F21D44;
+}
+.footer-social {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 48px;
+  font-size: 1rem;
+}
+.footer-social i:hover {
+  color: #F21D44;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 1068px) {
+  .header .navbar-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 1068px) {
+  .header .navbar-menu {
+    display: block;
+  }
+  .header .logo {
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+  }
+  html {
+    font-size: 15px;
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .grid {
+    grid-column: 1/13;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    background: #F21D44;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: 0.4s ease-out;
+    opacity: 0;
+  }
+  .active.navbar-menu {
+    transition: 0.3s ease-in;
+  }
+  .active.navbar-menu span {
+    transition: 0.3s ease-in;
+  }
+  .active.navbar-menu span:nth-child(2) {
+    visibility: hidden;
+  }
+  .active.navbar-menu span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .active.navbar-menu span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .active .navbar {
+    transition: 0.4s ease-in-out;
+    transform: translateX(0%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  .header navbar-social {
+    gap: 40px;
+  }
+  .header .navbar-search {
+    display: none;
+  }
+  .navbar .nav-list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .navbar .nav-list a {
+    color: white;
+  }
+  .navbar .nav-list a:hover {
+    color: white;
+    border-bottom: 1px solid white;
+  }
+  .hero-content {
+    display: block;
+  }
+  .wrapper .hot-topic {
+    grid-column: 1/13;
+  }
+  .wrapper .fashion {
+    grid-column: 1/13;
+    margin: 0;
+  }
+  .gallery .card1,
+.gallery .card2,
+.gallery .card3,
+.gallery .card4 {
+    grid-column: span 6;
+  }
+  .blog-fashion,
+.blog-lifestyle,
+.blog-tech {
+    grid-column: span 6;
+  }
+  .advertisement {
+    display: block;
+    height: auto;
+    background-size: cover;
+    border-radius: 5px;
+  }
+  .overview .ov-links,
+.overview .tech {
+    grid-column: span 12;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+  .wrapper .hot-topic-feature {
+    grid-column: span 12;
+  }
+  .wrapper .hot-topic .news {
+    grid-column: span 12;
+  }
+  .header .navbar {
+    width: 100vw;
+  }
+  .gallery .card1,
+.gallery .card2,
+.gallery .card3,
+.gallery .card4 {
+    grid-column: span 12;
+  }
+  .gallery-card img {
+    width: 100%;
+  }
+  .gallery-title .line {
+    display: none;
+  }
+  .blog-fashion,
+.blog-lifestyle,
+.blog-tech {
+    grid-column: span 12;
+  }
+  .wrapper .hot-topic-title {
+    grid-column: span 12;
+  }
+}
+@media (max-width: 500px) {
+  .footer-nav {
+    flex-direction: column;
+  }
+  .copyright {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .overview .ov-card {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .overview .ov-card img {
+    width: 100%;
+  }
+  .overview .btn {
+    margin-top: 20px;
+  }
+  .wrapper .hot-topic-title .line {
+    display: none;
+  }
 }/*# sourceMappingURL=grid.css.map */
