@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="image/icons8-magazine-96.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!--k rel="stylesheet" href="sass/style.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="sass/style.css" />  -->
     <link rel="stylesheet" href="sass/grid.css">
+    <!-- <link rel="stylesheet" href="sass/swiper1.css"> -->
     <title>Magazine</title>
 </head>
 
@@ -22,31 +23,31 @@
                     <span>A MAGAZINE THEME</span>
                 </div>
 
-                <!-- <div class="navbar "> -->
-                <div class="navbar grid">
+                <div class="navbar ">
+                    <div class="navbar grid">
 
-                    <div class=" card navbar-social">
-                        <i class="fa fa-facebook"></i>
-                        <i class="fa fa-instagram"></i>
-                        <i class="fa fa-linkedin"></i>
-                        <i class="fa fa-twitter"></i>
-
-
+                        <div class=" card navbar-social">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-linkedin"></i>
+                            <i class="fa fa-twitter"></i>
 
 
+
+
+                        </div>
+                        <div class="card nav-list">
+                            <a href="#">Home</a>
+                            <a href="#">Latest News</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Travel</a>
+                            <a href="#">Event</a>
+                        </div>
+                        <div class="navbar-search">
+                            <img src="image/Vectorsearch.png" alt="search" />
+
+                        </div>
                     </div>
-                    <div class="card nav-list">
-                        <a href="#">Home</a>
-                        <a href="#">Latest News</a>
-                        <a href="#">Fashion</a>
-                        <a href="#">Travel</a>
-                        <a href="#">Event</a>
-                    </div>
-                    <div class="navbar-search">
-                        <img src="image/Vectorsearch.png" alt="search" />
-
-                    </div>
-                    <!-- </div> -->
                 </div>
 
                 <div class="navbar-menu  hide-desktop">
@@ -121,7 +122,7 @@
         <div class="container">
             <div class="wrapper grid">
                 <div class="hot-topic  ">
-                    <div class="hot-topic-title">
+                    <div class="  hot-topic-title">
                         <h3>Hot Topics</h3>
                         <div class="line"></div>
                         <p>
@@ -129,90 +130,148 @@
                             <span>Fashion</span>
                             <span>Travel</span>
                             <span>
-                                <i class="fa fa-angle-left"></i>
-                                <i class="fa fa-angle-right"></i>
+                                <i class="fa fa-angle-left hot-topic-prev"></i>
+                                <i class="fa fa-angle-right hot-topic-next"></i>
                             </span>
                         </p>
                     </div>
+                    <div class="swiper hot-topic-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
 
-                    <div class="hot-topic-feature">
-                        <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1hotopic.png" alt="" />
-                        <div class="hot-topic-feature-text">
-                            <p class="info">
-                                <span><i class="fa fa-user"></i>Sunny Texazi</span>
-                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25, 2022</span>
-                            </p>
-                            <h3>
-                                <a href="">Intillegent Strategies For The Entrepreneurially
-                                    Challenged</a>
-                            </h3>
-                            <p class="font-500">
-                                There’s a growing community of digital world whe a
-                                location-independenestyle.
-                            </p>
+                                <div class="hot-topic-feature">
+                                    <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1hotopic.png" alt="" />
+                                    <div class="hot-topic-feature-text">
+                                        <p class="info">
+                                            <span><i class="fa fa-user"></i>Sunny Texazi</span>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </p>
+                                        <h3>
+                                            <a href="">Intillegent Strategies For The Entrepreneurially
+                                                Challenged</a>
+                                        </h3>
+                                        <p class="font-500">
+                                            There’s a growing community of digital world whe a
+                                            location-independenestyle.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="news">
+                                    <div class="news-links">
+                                        <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(1).png" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(4)(1).png" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1bfsn2.png" alt="">
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(2).png" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="fashion">
+                                    <div class="fashion-title">
+                                        <h3>Fashion</h3>
+                                        <span> <span>
+                                    </div>
+
+                                    <div class="feature">
+                                        <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1fashion(1).png" alt="">
+                                        <div class="feature-text">
+                                            <span class="tag">Fashion</span>
+                                            <a href="https://facebook.com" classks">How To Become Better With Magazine
+                                                In 10
+                                                Minutes</a>
+                                            <p class="info">
+                                                <span><i class="fa fa-user"></i>Sunny Texazi</span>
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
+                                                    25, 2022</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <img src="image/fsn2.png" alt="">
+                                        <div class="wrap-link">
+                                            <a href="">If Trends Is Bad, Follow this?</a>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="wrap">
+                                        <img src="image/fashion3.png" alt="">
+                                        <div class="wrap-link">
+                                            <a href="">If Trends Is Bad, Follow this?</a>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">Slide 3</div>
+
                         </div>
+                        <!-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div> -->
                     </div>
-                    <!-- featureend -->
 
-                    <div class="news">
-                        <div class="news-links">
-                            <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(1).png" alt="" />
-                            <div>
-                                <p class="info">
-                                    <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
-                                        2022</span>
-                                </p>
-                                <a href="#">
-                                    About Beauty They Are Still Keeping From You
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="news-links">
-                            <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(4)(1).png" alt="" />
-                            <div>
-                                <p class="info">
-                                    <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
-                                        2022</span>
-                                </p>
-                                <a href="#">
-                                    About Beauty They Are Still Keeping From You
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="news-links">
-                            <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1bfsn2.png" alt="">
-                            <div>
-                                <p class="info">
-                                    <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
-                                        2022</span>
-                                </p>
-                                <a href="#">
-                                    About Beauty They Are Still Keeping From You
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="news-links">
-                            <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(2).png" alt="" />
-                            <div>
-                                <p class="info">
-                                    <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
-                                        2022</span>
-                                </p>
-                                <a href="#">
-                                    About Beauty They Are Still Keeping From You
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
+
                 <!-- news end  -->
                 <div class="fashion">
                     <div class="fashion-title">
                         <h3>Fashion</h3>
-                        <span></span>
+                        <span class="line"></span>
                     </div>
 
                     <div class="feature">
@@ -246,11 +305,15 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+
+        </div>
     </article>
 
 
 
-
+<!-- gallery section  -->
 
     <section>
         <div class="container">
@@ -259,76 +322,93 @@
                 <div class="line"></div>
 
                 <span>
-                    <i class="fa fa-angle-left"></i>
-                    <i class="fa fa-angle-right"></i>
+                    <i class="fa fa-angle-left gallery-prev"></i>
+                    <i class="fa fa-angle-right gallery-next"></i>
                 </span>
 
             </div>
             <div class="gallery grid">
+                <div class="swiper gallery-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="gallery-card card1">
+                                <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1gallery.png" alt="" />
+                                <div class="gallery-card-content ">
+                                    <span class="tag">Environment</span>
+                                    <a href="#" class="heading">The source of Horizon bottled water is the subject of a
+                                        fierce feud.
+                                    </a>
+                                    <p class="info">
+                                        <span class="name"> <i class="fa fa-user"></i> Sussane </span>
+                                        <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
+                                            25, 2022</span>
+                                    </p>
+                                </div>
+                            </div>
 
 
-                <div class="gallery-card card1">
-                    <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1gallery.png" alt="" />
-                    <div class="gallery-card-content ">
-                        <span class="tag">Environment</span>
-                        <a href="#" class="heading">The source of Horizon bottled water is the subject of a fierce feud.
-                        </a>
-                        <p class="info">
-                            <span class="name"> <i class="fa fa-user"></i> Sussane </span>
-                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
-                                25, 2022</span>
-                        </p>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="gallery-card card2">
+                                <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1gallery(2).png" alt="" />
+                                <div class="gallery-card-content ">
+                                    <span class="tag">Environment</span>
+                                    <a href="#" class="heading">The source of Horizon bottled water is the subject of a
+                                        fierce feud.
+                                    </a>
+                                    <p class="info">
+                                        <span class="name"> <i class="fa fa-user"></i> Sussane </span>
+                                        <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
+                                            25, 2022</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="gallery-card card2">
+                                <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1gallery(1).png" alt="" />
+                                <div class="gallery-card-content ">
+                                    <span class="tag">Environment</span>
+                                    <a href="#" class="heading">The source of Horizon bottled water is the subject of a
+                                        fierce feud.
+                                    </a>
+                                    <p class="info">
+                                        <span class="name"> <i class="fa fa-user"></i> Sussane </span>
+                                        <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
+                                            25, 2022</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+
+                            <div class="gallery-card card2">
+                                <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1gallery(3).png" alt="" />
+                                <div class="gallery-card-content ">
+                                    <span class="tag">Environment</span>
+                                    <a href="#" class="heading">The source of Horizon bottled water is the subject of a
+                                        fierce feud.
+                                    </a>
+                                    <p class="info">
+                                        <span class="name"> <i class="fa fa-user"></i> Sussane </span>
+                                        <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
+                                            25, 2022</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
+                  
+                    <!-- <div class="swiper-pagination"></div> -->
                 </div>
-
-
-
-                <div class="gallery-card card2">
-                    <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1gallery(1).png" alt="" />
-                    <div class="gallery-card-content ">
-                        <span class="tag">Environment</span>
-                        <a href="#" class="heading">The source of Horizon bottled water is the subject of a fierce feud.
-                        </a>
-                        <p class="info">
-                            <span class="name"> <i class="fa fa-user"></i> Sussane </span>
-                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
-                                25, 2022</span>
-                        </p>
-                    </div>
-                </div>
-
-
-
-                <div class="gallery-card card3">
-                    <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1gallery(2).png" alt="" />
-                    <div class="gallery-card-content ">
-                        <span class="tag">Environment</span>
-                        <a href="#" class="heading">The source of Horizon bottled water is the subject of a fierce feud.
-                        </a>
-                        <p class="info">
-                            <span class="name"> <i class="fa fa-user"></i> Sussane </span>
-                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
-                                25, 2022</span>
-                        </p>
-                    </div>
-                </div>
-
-
-
-                <div class="gallery-card card4">
-                    <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1gallery(3).png" alt="" />
-                    <div class="gallery-card-content ">
-                        <span class="tag">Environment</span>
-                        <a href="#" class="heading">The source of Horizon bottled water is the subject of a fierce feud.
-                        </a>
-                        <p class="info">
-                            <span class="name"> <i class="fa fa-user"></i> Sussane </span>
-                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
-                                25, 2022</span>
-                        </p>
-                    </div>
-                </div>
-
             </div>
 
         </div>
@@ -823,48 +903,50 @@
         </div>
     </section>
 
-<!-- footer start ----------------------------------
+    <!-- footer start ----------------------------------
 ---------------------------------------------------- -->
 
 
-<footer>
-    <div class="container">
-        <div class="footer">
-            <div class="footer-logo">
-                <h1>Magazine.</h1>
-                <span>A MAGAZINE THEME</span>
-            </div>
-            <div class="footer-nav">
-                <a href="https://theuselessweb.com/">Home</a>
-                <a href="https://theuselessweb.com/">Fashion</a>
-                <a href="https://theuselessweb.com/">Travel</a>
-                <a href="https://theuselessweb.com/">Feature</a>
-                <a href="https://theuselessweb.com/">Events</a>
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-logo">
+                    <h1>Magazine.</h1>
+                    <span>A MAGAZINE THEME</span>
+                </div>
+                <div class="footer-nav">
+                    <a href="https://theuselessweb.com/">Home</a>
+                    <a href="https://theuselessweb.com/">Fashion</a>
+                    <a href="https://theuselessweb.com/">Travel</a>
+                    <a href="https://theuselessweb.com/">Feature</a>
+                    <a href="https://theuselessweb.com/">Events</a>
+
+                </div>
+                <div class="footer-social">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+                    <i class="fa fa-twitter"></i>
+
+
+                </div>
+
 
             </div>
-            <div class="footer-social">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-instagram"></i>
-                <i class="fa fa-linkedin"></i>
-                <i class="fa fa-twitter"></i>
 
-               
+            <div class="copyright">
+                <p>© 2022 Magazine - Powered by Rishi Theme</p>
+                <p>Privacy Policy | Terms and Conditions</p>
+
             </div>
-
 
         </div>
-
-        <div class="copyright">
-            <p>© 2022 Magazine - Powered by Rishi Theme</p>
-            <p>Privacy Policy  |  Terms and Conditions</p>
-
-        </div>
-
-    </div>
-</footer>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 
     <script src="index.js"></script>
+    <script src="swiper.js"></script>
 </body>
 
 </html>

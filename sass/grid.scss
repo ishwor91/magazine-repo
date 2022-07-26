@@ -5,6 +5,12 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 h3 {
   font-size: $font-700;
   line-height: 2rem;
@@ -41,7 +47,9 @@ section,
 footer {
   padding: 22px 0 56px 0;
 }
-
+.col {
+  grid-column: span 5;
+}
 //   main start-------------------------
 //-----------------------------------------------
 
@@ -58,7 +66,6 @@ footer {
   grid-column: span 4;
 }
 
-
 // header ///////////////////////
 .header {
   .logo {
@@ -67,6 +74,7 @@ footer {
     grid-column: 1 / 13;
     justify-self: center;
     text-align: center;
+    
 
     h1 {
       font-size: 3.85rem;
@@ -77,6 +85,10 @@ footer {
       line-height: 2.5rem;
       letter-spacing: -2%;
       padding: 32px 0 8px 0;
+      &:hover {
+        font-size: 41px;
+        transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      }
     }
 
     span {
@@ -101,15 +113,14 @@ footer {
         width: 16px;
         color: $light-grey;
 
-        &-facebook:hover{
+        &-facebook:hover {
           color: #3471eb;
-
         }
-        &-
 
         &:hover {
           cursor: pointer;
           color: $red;
+          transition: all 0.3s ease-in;
         }
       }
     }
@@ -162,6 +173,7 @@ footer {
       &:hover {
         color: $red;
         border-bottom: 1px solid $red;
+        transition: all 0.3s ease-in;
       }
     }
   }
@@ -169,11 +181,6 @@ footer {
 
 // header end ------------
 // --------------------
-.col {
-  grid-column: 8 / span 5;
-}
-
-
 
 // hero section ///////////////////////////////
 .hero {
@@ -194,6 +201,7 @@ footer {
     .hero-card {
       border-radius: 4px;
       position: relative;
+
       &-content {
         text-align: start;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
@@ -249,19 +257,103 @@ footer {
 // hot topic start >>>>>>
 .wrapper {
   text-align: start;
+  justify-items: start;
+  align-items: flex-start;
 
   .hot-topic {
     display: grid;
-    grid-column: 1 / span 7;
+    grid-column: 1/8;
+    align-items: flex-start;
+    grid-template-columns: repeat(12, 1fr);
     gap: 17px;
 
+    .swiper {
+      width: 100%;
+      height: 100%;
+      grid-column: 1/13;
+      &-wrapper {
+        grid-column: span 12;
+      }
+
+      &-slide {
+        height: 520px;
+        overflow: scroll;
+        // align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        // margin: 0 auto;
+        overflow-x: hidden;
+
+        .hot-topic-feature {
+          grid-column: span 7;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+          }
+
+          &-text {
+            padding: 25px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 0%,
+              #000000 100%
+            );
+
+            .info {
+              font-size: $font-400;
+              font-weight: 400;
+              line-height: $font-450;
+              color: $white;
+              display: flex;
+              gap: 18px;
+
+              i {
+                margin-right: 6px;
+              }
+            }
+
+            h3 a {
+              display: inline-block;
+              color: $white;
+              padding: 16px 0;
+
+              &:hover {
+                color: $red;
+                transition: all 0.3s ease-in;
+              }
+            }
+
+            .font-500 {
+              font-size: $font-450;
+              font-weight: 400;
+              color: $white;
+              line-height: 24px;
+            }
+          }
+        }
+        .fashion {
+          width: 100%;
+          grid-column: span 12;
+        }
+      }
+    }
+
     &-title {
-      grid-column: 1 / span 7;
+      grid-column: 1 / span 12;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      &>h3 {
+      & > h3 {
         font-size: $font-700;
         line-height: 2.5rem;
         color: rgba(14, 19, 43, 1);
@@ -271,11 +363,11 @@ footer {
       }
 
       .line {
-          display: inline-block;
-          height: 2px;
-          background-color: #e4e4e4;
+        display: inline-block;
+        height: 2px;
+        background-color: #e4e4e4;
 
-          min-width: 50%;
+        min-width: 40%;
       }
 
       p {
@@ -294,82 +386,35 @@ footer {
           gap: 8px;
 
           i {
-            border: 1px solid rgba(186, 186, 186, 1);
+            border: 1px solid $light-grey;
             font-size: 1rem;
             padding: 6px 10px;
-            color: rgba(186, 186, 186, 1);
+            color: $black;
           }
-
-          .fa-angle-right {
-            color: rgba(41, 41, 41, 1);
+          .swiper-button-disabled {
+            color: $light-grey;
           }
-        }
-      }
-    }
-
-    &-feature {
-      grid-column: 1 / span 4;
-      position: relative;
-
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: 4px;
-      }
-
-      &-text {
-        padding: 25px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-
-        .info {
-          font-size: $font-400;
-          font-weight: 400;
-          line-height: $font-450;
-          color: $white;
-          display: flex;
-          gap: 18px;
-
-          i {
-            margin-right: 6px;
-          }
-        }
-
-        h3 a {
-          display: inline-block;
-          color: $white;
-          padding: 16px 0;
-
-          &:hover {
-            color: $red;
-          }
-        }
-
-        .font-500 {
-          font-size: $font-450;
-          font-weight: 400;
-          color: $white;
-          line-height: 24px;
         }
       }
     }
 
     .news {
-      grid-column: 5 / span 3;
+      grid-column: 8 / span 5;
+      img {
+        height: 100%;
+      }
 
       &-links {
         align-items: center;
         display: flex;
         gap: 10px;
+        img {
+          border-radius: 4px;
+          height: 100%;
+        }
 
         &:not(:nth-child(1)) {
           margin-top: 15px;
-
-          img {
-            border-radius: 4px;
-          }
         }
 
         a {
@@ -383,15 +428,16 @@ footer {
 
           &:hover {
             color: $red;
+            transition: all .3s ease-in;
           }
         }
       }
     }
   }
 }
-
 .info {
   color: $light-grey;
+  font-size: $font-400;
 
   i {
     margin-right: 6px;
@@ -417,10 +463,10 @@ footer {
     }
 
     .line {
-      display: inline-block;
       height: 2px;
-      background-color: rgba(228, 228, 228, 1);
-      width: 50%;
+      display: inline-block;
+      background-color: #e4e4e4;
+      width: 80%;
     }
   }
 
@@ -453,6 +499,8 @@ footer {
 
       &:hover {
         color: $red;
+        transition: all .3s ease-in;
+
       }
     }
 
@@ -514,10 +562,14 @@ footer {
     }
   }
 }
+
 // .gallery :start ////////////////////
 
 .gallery {
-  gap: 30px;
+  // gap: 30px;
+  .swiper {
+    grid-column: span 12;
+  }
 
   &-title {
     display: flex;
@@ -535,17 +587,16 @@ footer {
     .line {
       height: 1px;
       background-color: rgba(228, 228, 228, 1);
-      width: 50%;
+      width: 80%;
     }
 
     .fa {
       padding: 6px 10px;
-      border: 1px solid $light-grey;
-      color: rgba(186, 186, 186, 1);
-    }
-
-    .fa-angle-right {
+      border: 1px solid $black;
       color: $black;
+    }
+    .swiper-button-disabled {
+      color: $light-grey;
     }
   }
 
@@ -557,7 +608,6 @@ footer {
     img {
       width: 100%;
       border-radius: 4px;
-      aspect-ratio: 1/1;
     }
 
     &-content {
@@ -565,7 +615,7 @@ footer {
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 25px;
+      padding: 16px;
       z-index: 20;
       color: $white;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
@@ -587,12 +637,14 @@ footer {
 
         &:hover {
           color: $red;
+          transition: all .3s ease-in;
+
         }
       }
 
       .info {
         display: flex;
-        gap: 18px;
+        justify-content: space-between;
         font-size: $font-400;
         line-height: 14px;
         color: $white;
@@ -602,22 +654,6 @@ footer {
         }
       }
     }
-  }
-
-  .card1 {
-    grid-column: 1/4;
-  }
-
-  .card2 {
-    grid-column: 4/7;
-  }
-
-  .card3 {
-    grid-column: 7/10;
-  }
-
-  .card4 {
-    grid-column: 10/13;
   }
 }
 
@@ -643,14 +679,14 @@ footer {
     display: block;
     height: 1px;
     background-color: rgba(228, 228, 228, 1);
-    width: 50%;
+    width: 60%;
   }
 }
 
 .news {
   &-links {
     align-items: center;
-   
+    text-align: start;
     display: flex;
     gap: 10px;
 
@@ -678,6 +714,8 @@ footer {
 
       &:hover {
         color: $red;
+        transition: all .3s ease-in;
+
       }
     }
   }
@@ -686,12 +724,6 @@ footer {
 // blog content start here
 
 // ---------------------
-.blog-container {
-  // gap: 30px;
-
-  text-align: start;
-}
-
 .blog-fashion {
   grid-column: 1/5;
 }
@@ -704,8 +736,7 @@ footer {
   grid-column: 9/13;
 }
 
-
-// advertisement section start 
+// advertisement section start
 .advertisement {
   margin-top: 54px;
   height: 144px;
@@ -743,12 +774,14 @@ footer {
 
     &:hover {
       cursor: pointer;
+
       &:hover {
         cursor: pointer;
-        // font-size: 20px;
         border-radius: 25px 0;
-        background-image: linear-gradient(to right top, red,blue);
+        background-image: linear-gradient(to right top, red, blue);
         color: white;
+        transition: all .3s ease-in;
+
       }
     }
   }
@@ -778,7 +811,7 @@ footer {
     .line {
       height: 1px;
       background-color: $light-grey;
-      width: 50%;
+      width: 80%;
     }
 
     position: relative;
@@ -802,7 +835,13 @@ footer {
       font-family: "roboto slab";
       line-height: 2.5rem;
       color: rgba(14, 19, 43, 1);
+      &:hover {
+        color: $red;
+        transition: all .3s ease-in;
+
+      }
     }
+
 
     .info {
       font-size: $font-400;
@@ -845,7 +884,7 @@ footer {
       cursor: pointer;
       font-size: 20px;
       border-radius: 25px 0;
-      background-image: linear-gradient(to right top, red,blue);
+      background-image: linear-gradient(to right top, red, blue);
       color: white;
     }
   }
@@ -870,7 +909,7 @@ footer {
       .line {
         display: inline-block;
         height: 1px;
-        width: 200px;
+        width: 70%;
         background: rgba(14, 19, 43, 1);
         top: 20px;
       }
@@ -892,6 +931,11 @@ footer {
       padding: 14px 0 18px 0;
       display: block;
       color: $white;
+      &:hover {
+        color: $red;
+        transition: all .3s ease-in;
+
+      }
     }
 
     .info {
@@ -919,11 +963,15 @@ footer {
     }
 
     .ov-card {
-
       // align-items: center;
       a {
         color: $black;
         font-size: $font-400;
+        &:hover {
+          color: $red;
+          transition: all .3s ease-in;
+  
+        }
       }
 
       .info {
@@ -942,13 +990,16 @@ footer {
       }
     }
 
-
-
     .tech-title {
       .line {
         height: 1px;
-        width: 80%;
+        width: 70%;
         color: $light-grey;
+      }
+      a:hover {
+        color: $red;
+        transition: all .3s ease-in;
+
       }
     }
   }
@@ -967,7 +1018,9 @@ footer {
       font-weight: 400;
       color: rgba(14, 19, 43, 1);
     }
-
+    .line {
+      width: 40%;
+    }
   }
 
   // recent post style ///////////////////
@@ -977,7 +1030,6 @@ footer {
     }
 
     &-post {
-
       &-card {
         &:not(:nth-child(1)) {
           margin-top: 35px;
@@ -997,6 +1049,8 @@ footer {
 
             &:hover {
               color: $red;
+              transition: all .3s ease-in;
+      
             }
           }
 
@@ -1016,9 +1070,6 @@ footer {
   }
 }
 
-
-
-
 // footer start //////////////////
 footer {
   background: $black;
@@ -1034,7 +1085,6 @@ footer {
   align-items: center;
 
   &-logo {
-
     h1 {
       font-size: 3.85rem;
       color: $red;
@@ -1044,9 +1094,10 @@ footer {
       line-height: 2.5rem;
       letter-spacing: -2%;
       padding: 32px 0 8px 0;
-      &:hover{
-        cursor: pointer;
-        font-size: 3.8rem;
+
+      &:hover {
+        font-size: 41px;
+        transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
       }
     }
 
@@ -1070,9 +1121,10 @@ footer {
       line-height: 30px;
       padding-bottom: 10px;
 
-      &:hover{
+      &:hover {
         color: $red;
         border-bottom: 1px solid $red;
+        transition: .3s all ease-in;
       }
     }
   }
@@ -1082,8 +1134,10 @@ footer {
     gap: 2rem;
     padding-bottom: 48px;
     font-size: $font-500;
-    i:hover{
+
+    i:hover {
       color: $red;
+      cursor: pointer;
     }
   }
 }
@@ -1100,12 +1154,12 @@ footer {
 // responsive design ---------------------
 
 // design for medium devices ---------------------
-  @media (max-width:1240px) {
-    .container{
-      padding: 0 30px;
-    }
-    
+@media (max-width: 1240px) {
+  .container {
+    padding: 0 30px;
   }
+}
+
 @media (min-width: 1068px) {
   .header .navbar-menu {
     display: none;
@@ -1135,7 +1189,7 @@ footer {
   }
 
   .grid {
-    grid-column: 1/13
+    grid-column: 1/13;
   }
 
   // reponsive navbar -----------------
@@ -1218,7 +1272,16 @@ footer {
 
   // .navbar end ------------------------------------------
 
+  .swiper {
+    grid-column: span 12;
 
+    .swiper-slide {
+      grid-column: span 12;
+      .fashion {
+        width: 100%;
+      }
+    }
+  }
 
   .hero-content {
     display: block;
@@ -1226,18 +1289,29 @@ footer {
 
   .wrapper .hot-topic {
     grid-column: 1/13;
+
+    .swiper {
+      grid-column: span 12;
+      &-slide {
+        align-items: flex-start;
+        .hot-topic-feature {
+          grid-column: span 6;
+        }
+        .news {
+          grid-column: span 6;
+        }
+      }
+    }
   }
 
   .wrapper .fashion {
-    grid-column: 1/13;
-    margin: 0;
+    grid-column: 1 / span 12;
+    width: 100%;
   }
-
-  .gallery .card1,
-  .gallery .card2,
-  .gallery .card3,
-  .gallery .card4 {
-    grid-column: span 6;
+  .gallery-title {
+    .line {
+      width: 50%;
+    }
   }
 
   .blog-fashion,
@@ -1254,7 +1328,6 @@ footer {
   }
 
   // overview section
-  
 
   .overview .ov-links,
   .overview .tech {
@@ -1267,11 +1340,40 @@ footer {
   html {
     font-size: 13px;
   }
-
-  .wrapper .hot-topic-feature {
+  .hero {
+    display: block;
+  }
+  .wrapper {
+    .hot-topic .swiper {
+      grid-column: span 12;
+      &-slide {
+        grid-column: span 12;
+        .hot-topic-feature {
+          grid-column: span 12;
+        }
+        .news {
+          grid-column: span 12;
+          img {
+            width: 200px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .fashion {
+      grid-column: 1 / span 12;
+      width: 100%;
+      &-title {
+        grid-column: span 12;
+      }
+      .feature {
+        grid-column: span 12;
+      }
+    }
+  }
+  .swiper-wrapper {
     grid-column: span 12;
   }
-
   .wrapper .hot-topic .news {
     grid-column: span 12;
   }
@@ -1292,10 +1394,6 @@ footer {
     width: 100%;
   }
 
-  .gallery-title .line {
-    display: none;
-  }
-
   // for blo section -----------------------------
   .blog-fashion,
   .blog-lifestyle,
@@ -1308,9 +1406,7 @@ footer {
   }
 }
 
-
-
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .footer-nav {
     flex-direction: column;
   }
@@ -1321,20 +1417,23 @@ footer {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  .overview{
 
-   .ov-card{
-    flex-direction: column;
-    margin-top: 40px;
-     img {
-      width: 100%;
-  }}
-  .btn{
-    margin-top: 20px;
+  .overview {
+    .ov-card {
+      flex-direction: column;
+      margin-top: 40px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .btn {
+      margin-top: 20px;
+    }
   }
-}
 
-  .wrapper .hot-topic-title .line{
+  .wrapper .hot-topic-title .line {
     display: none;
   }
 }
