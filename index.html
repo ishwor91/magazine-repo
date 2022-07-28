@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header class="">
+    <header class="header-container" id="home">
         <div class="container">
             <div class="header">
                 <div class="logo ">
@@ -37,11 +37,11 @@
 
                         </div>
                         <div class="card nav-list">
-                            <a href="#">Home</a>
-                            <a href="#">Latest News</a>
-                            <a href="#">Fashion</a>
-                            <a href="#">Travel</a>
-                            <a href="#">Event</a>
+                            <a class="nav" href="#home">Home</a>
+                            <a class="nav" href="#news">Latest News</a>
+                            <a class="nav" href="#fashion">Fashion</a>
+                            <a class="nav" href="#travel">Travel</a>
+                            <a class="nav" href="#event">Event</a>
                         </div>
                         <div class="navbar-search">
                             <img src="image/Vectorsearch.png" alt="search" />
@@ -58,8 +58,8 @@
             </div>
         </div>
     </header>
-    <!-- header enddddd=====_-_----____________ -->
-    <!-- hero start ____________________---- -->
+    <!-- -----------header enddddd____________ -->
+    <!-- hero start ____________________-->
     <section class="hero">
         <div class="container">
             <div class="hero-content grid">
@@ -117,30 +117,32 @@
     </section>
     <!-- hero section end------------------------ -->
 
-    <!-- Article section start =++++++++++++++++++++++++++++++ -->
+    <!-- Article section start -->
     <article>
         <div class="container">
-            <div class="wrapper grid">
+            <div class="wrapper grid" id="fashion">
                 <div class="hot-topic  ">
                     <div class="  hot-topic-title">
                         <h3>Hot Topics</h3>
                         <div class="line"></div>
                         <p>
-                            <span class="active">All</span>
-                            <span>Fashion</span>
-                            <span>Travel</span>
+                            <button class="nav-link  " onclick="openPage(event,'all')" id="defaultOpen">All</button>
+                            <button class="nav-link" onclick="openPage(event,'fashion1')" >Fashion</button>
+                            <button class="nav-link " onclick="openPage(event,'travel')">Travel</button>
+
+                            
                             <span>
                                 <i class="fa fa-angle-left hot-topic-prev"></i>
                                 <i class="fa fa-angle-right hot-topic-next"></i>
                             </span>
                         </p>
                     </div>
-                    <div class="swiper hot-topic-swiper">
+                    <div class="swiper hot-topic-swiper" id="all">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
 
                                 <div class="hot-topic-feature">
-                                    <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1hotopic.png" alt="" />
+                                    <img src="https://images.unsplash.com/photo-1465311354905-789ff5f7a457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHRyYXZlbHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
                                     <div class="hot-topic-feature-text">
                                         <p class="info">
                                             <span><i class="fa fa-user"></i>Sunny Texazi</span>
@@ -159,7 +161,130 @@
                                 </div>
                                 <div class="news">
                                     <div class="news-links">
-                                        <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(1).png" alt="" />
+                                        <img src="https://images.unsplash.com/photo-1563290720-cdd4acf1830e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHRyYXZlbHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="https://images.unsplash.com/photo-1590437083949-3d624b12df45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fHRyYXZlbHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1bfsn2.png" alt="">
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(2).png" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="fashion">
+                                    <div class="fashion-title">
+                                        <h3>Fashion</h3>
+                                        <span> <span>
+                                    </div>
+
+                                    <div class="feature">
+                                        <img src="https://images.unsplash.com/photo-1548666986-81912b883425?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fGZhc2hpb258ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                                        <div class="feature-text">
+                                            <span class="tag">Fashion</span>
+                                            <a href="https://facebook.com" classks">How To Become Better With Magazine
+                                                In 10
+                                                Minutes</a>
+                                            <p class="info">
+                                                <span><i class="fa fa-user"></i>Sunny Texazi</span>
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
+                                                    25, 2022</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <img src="image/fsn2.png" alt="">
+                                        <div class="wrap-link">
+                                            <a href="">If Trends Is Bad, Follow this?</a>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="wrap">
+                                        <img src="image/fashion3.png" alt="">
+                                        <div class="wrap-link">
+                                            <a href="">If Trends Is Bad, Follow this?</a>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">Slide 3</div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="swiper hot-topic-swiper" id="fashion1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+
+                                <div class="hot-topic-feature">
+                                    <img src="https://images.unsplash.com/photo-1524041255072-7da0525d6b34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZmFzaGlvbnxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                                    <div class="hot-topic-feature-text">
+                                        <p class="info">
+                                            <span><i class="fa fa-user"></i>Sunny Texazi</span>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </p>
+                                        <h3>
+                                            <a href="">Baffled scientists find 'perfect' holes under the Atlantic Ocean that look 'human-made'</a>
+                                        </h3>
+                                        <p class="font-500">
+                                            There’s a growing community of digital world whe a
+                                            location-independenestyle.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="news">
+                                    <div class="news-links">
+                                        <img src="https://images.unsplash.com/photo-1536992266094-82847e1fd431?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGZhc2hpb258ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
                                         <div>
                                             <p class="info">
                                                 <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
@@ -220,7 +345,132 @@
                                     </div>
 
                                     <div class="feature">
-                                        <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1fashion(1).png" alt="">
+                                        <img src="https://images.unsplash.com/photo-1548666986-81912b883425?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fGZhc2hpb258ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                                        <div class="feature-text">
+                                            <span class="tag">Fashion</span>
+                                            <a href="https://facebook.com" classks">How To Become Better With Magazine
+                                                In 10
+                                                Minutes</a>
+                                            <p class="info">
+                                                <span><i class="fa fa-user"></i>Sunny Texazi</span>
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February
+                                                    25, 2022</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <img src="image/fsn2.png" alt="">
+                                        <div class="wrap-link">
+                                            <a href="">If Trends Is Bad, Follow this?</a>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="wrap">
+                                        <img src="image/fashion3.png" alt="">
+                                        <div class="wrap-link">
+                                            <a href="">If Trends Is Bad, Follow this?</a>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">Slide 3</div>
+
+                        </div>
+                        <!-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div> -->
+                    </div> 
+                    <div class="swiper hot-topic-swiper" id="travel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+
+                                <div class="hot-topic-feature">
+                                    <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHRyYXZlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                                    <div class="hot-topic-feature-text">
+                                        <p class="info">
+                                            <span><i class="fa fa-user"></i>Sunny Texazi</span>
+                                            <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                2022</span>
+                                        </p>
+                                        <h3>
+                                            <a href="">Intillegent Strategies For The Entrepreneurially
+                                                Challenged</a>
+                                        </h3>
+                                        <p class="font-500">
+                                            There’s a growing community of digital world whe a
+                                            location-independenestyle.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="news">
+                                    <div class="news-links">
+                                        <img src="https://images.unsplash.com/photo-1518860308377-800f02d5498a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dHJhdmVsfGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="https://images.unsplash.com/photo-1443181844940-9042ec79924b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1bfsn2.png" alt="">
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-links">
+                                        <img src="image/jonas-svidras-e28-krnIVmo-unsplash 1(2).png" alt="" />
+                                        <div>
+                                            <p class="info">
+                                                <span><i class="fa fa-calendar-o" aria-hidden="true"></i>February 25,
+                                                    2022</span>
+                                            </p>
+                                            <a href="#">
+                                                About Beauty They Are Still Keeping From You
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="fashion">
+                                    <div class="fashion-title">
+                                        <h3>Fashion</h3>
+                                        <span> <span>
+                                    </div>
+
+                                    <div class="feature">
+                                        <img src="https://images.unsplash.com/photo-1548666986-81912b883425?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fGZhc2hpb258ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
                                         <div class="feature-text">
                                             <span class="tag">Fashion</span>
                                             <a href="https://facebook.com" classks">How To Become Better With Magazine
@@ -269,7 +519,7 @@
 
                 <!-- news end  -->
                 <div class="fashion">
-                    <div class="fashion-title">
+                    <div class="fashion-title" >
                         <h3>Fashion</h3>
                         <span class="line"></span>
                     </div>
@@ -316,7 +566,7 @@
 <!-- gallery section  -->
 
     <section>
-        <div class="container">
+        <div class="container " id="gallery">
             <div class="gallery-title">
                 <h3>Hot Topics</h3>
                 <div class="line"></div>
@@ -592,12 +842,7 @@
                             </p>
                         </div>
                     </div>
-
-
-
-
-
-                    <div class="news-links">
+                         <div class="news-links">
                         <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1ls2.png" alt="" />
                         <div>
                             <a href="https://thehimalayantimes.com/">
@@ -669,8 +914,8 @@
     <!-- ------------------------------------------------ -->
 
     <section>
-        <div class="container">
-            <div class="overview grid">
+        <div class="container" id="travel">
+            <div class="overview grid" id="news">
                 <div class="ov-links">
 
                     <div class="overview-catagory">
@@ -738,7 +983,7 @@
                         </div>
                     </div>
 
-                    <div class="ov-card ">
+                    <div class="ov-card " id="event">
                         <img src="image/miguel-tomas-6pDWe9zh0LE-unsplash 1ov(3).png" alt="">
                         <div>
                             <a href="https://thehimalayantimes.com/">
@@ -828,7 +1073,7 @@
                         </div>
                     </div>
                     <!-- popular-catagory --------------------------------- -->
-                    <div class="popular-catagory">
+                    <div class="popular-catagory " >
                         <div class="tech-title">
                             <h4>Popular Categories</h4>
                             <span class="line"></span>

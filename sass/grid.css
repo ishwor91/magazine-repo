@@ -115,8 +115,12 @@ footer {
   grid-column: span 4;
 }
 
+.header {
+  border-bottom: 1px solid rgba(1, 13, 0, 0.08);
+}
 .header .logo {
   width: 100%;
+  padding-bottom: 40px;
   grid-column: 1/13;
   justify-self: center;
   text-align: center;
@@ -133,6 +137,7 @@ footer {
 }
 .header .logo h1:hover {
   font-size: 41px;
+  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 .header .logo span {
@@ -141,14 +146,12 @@ footer {
   text-align: center;
   line-height: 1rem;
 }
-.header .navbar {
-  padding: 40px 0 16px 0;
-}
 .header .navbar-social {
   grid-column: span 3;
   justify-self: start;
   display: flex;
   gap: 16px;
+  padding-bottom: 10px;
 }
 .header .navbar-social .fa {
   height: 16px;
@@ -167,6 +170,7 @@ footer {
   position: fixed;
   top: 45px;
   right: 20px;
+  padding-bottom: 10px;
 }
 .header .navbar-menu span {
   display: block;
@@ -180,6 +184,7 @@ footer {
 .header .navbar-search {
   display: inline-block;
   justify-self: end;
+  padding-bottom: 10px;
 }
 .header .navbar-search img {
   height: 20px;
@@ -198,10 +203,15 @@ footer {
   text-decoration: none;
   color: #010D00;
   line-height: 1.75rem;
-  font-weight: 400;
-  padding: 5px;
+  font-weight: 500;
+  padding-bottom: 16px;
 }
 .header .nav-list a:hover {
+  color: #F21D44;
+  border-bottom: 1px solid #F21D44;
+  transition: all 0.3s ease-in;
+}
+.header .nav-list a:active {
   color: #F21D44;
   border-bottom: 1px solid #F21D44;
   transition: all 0.3s ease-in;
@@ -268,12 +278,19 @@ footer {
   justify-items: start;
   align-items: flex-start;
 }
+.wrapper img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .wrapper .hot-topic {
   display: grid;
   grid-column: 1/8;
   align-items: flex-start;
   grid-template-columns: repeat(12, 1fr);
   gap: 17px;
+}
+.wrapper .hot-topic .hot-topic-swiper {
+  display: none;
 }
 .wrapper .hot-topic .swiper {
   width: 100%;
@@ -302,6 +319,8 @@ footer {
   border-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
 }
 .wrapper .hot-topic .swiper-slide .hot-topic-feature-text {
   padding: 25px;
@@ -336,10 +355,6 @@ footer {
   color: white;
   line-height: 24px;
 }
-.wrapper .hot-topic .swiper-slide .fashion {
-  width: 100%;
-  grid-column: span 12;
-}
 .wrapper .hot-topic-title {
   grid-column: 1/span 12;
   display: flex;
@@ -365,28 +380,37 @@ footer {
   gap: 16px;
   align-items: center;
 }
-.wrapper .hot-topic-title p .active {
-  color: #F21D44;
-}
-.wrapper .hot-topic-title p span {
-  color: rgba(24, 0, 31, 0.54);
-  display: flex;
-  gap: 8px;
-}
-.wrapper .hot-topic-title p span i {
+.wrapper .hot-topic-title p i {
   border: 1px solid rgba(24, 0, 31, 0.54);
   font-size: 1rem;
   padding: 6px 10px;
   color: #010D00;
 }
-.wrapper .hot-topic-title p span .swiper-button-disabled {
+.wrapper .hot-topic-title p .swiper-button-disabled {
   color: rgba(24, 0, 31, 0.54);
 }
+.wrapper .hot-topic-title p .nav-link {
+  color: rgba(24, 0, 31, 0.54);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  font-size: 1rem;
+  line-height: 1.875em;
+  padding: 4px 6px;
+  background: none;
+}
+.wrapper .hot-topic-title p .nav-list .active {
+  color: #F21D44;
+}
 .wrapper .hot-topic .news {
-  grid-column: 8/span 5;
+  grid-column: 8/13;
 }
 .wrapper .hot-topic .news img {
   height: 100%;
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .wrapper .hot-topic .news-links {
   align-items: center;
@@ -412,6 +436,10 @@ footer {
 .wrapper .hot-topic .news-links a:hover {
   color: #F21D44;
   transition: all 0.3s ease-in;
+}
+.wrapper .hot-topic .fashion {
+  width: 100%;
+  grid-column: span 12;
 }
 
 .info {
@@ -551,6 +579,9 @@ footer {
   text-align: start;
   margin-top: 17px;
   position: relative;
+}
+.gallery-card:hover {
+  transform: scale(1.03);
 }
 .gallery-card img {
   width: 100%;
@@ -723,7 +754,7 @@ footer {
 .overview-catagory .line {
   height: 1px;
   background-color: rgba(24, 0, 31, 0.54);
-  width: 80%;
+  width: 60%;
 }
 .overview .ov-card {
   align-items: center;
@@ -1008,6 +1039,7 @@ footer {
 @media screen and (max-width: 1068px) {
   .header .navbar-menu {
     display: block;
+    transition: all 1s ease-in-out;
   }
   .header .logo {
     background-color: white;
@@ -1033,13 +1065,13 @@ footer {
     width: 100%;
     position: fixed;
     z-index: 100;
-    transform: translateX(100%);
+    transform: translateY(100%);
     visibility: hidden;
     transition: 0.4s ease-out;
     opacity: 0;
   }
   .active.navbar-menu {
-    transition: 0.3s ease-in;
+    transition: all 0.3s ease-in;
   }
   .active.navbar-menu span {
     transition: 0.3s ease-in;
@@ -1055,7 +1087,7 @@ footer {
   }
   .active .navbar {
     transition: 0.4s ease-in-out;
-    transform: translateX(0%);
+    transform: translateY(0%);
     width: 100%;
     height: 100%;
     top: 0;

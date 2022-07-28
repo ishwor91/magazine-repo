@@ -68,9 +68,12 @@ footer {
 
 // header ///////////////////////
 .header {
+  border-bottom: 1px solid rgba(1, 13, 0, 0.08);
+
+  
   .logo {
     width: 100%;
-
+    padding-bottom: 40px;
     grid-column: 1 / 13;
     justify-self: center;
     text-align: center;
@@ -87,6 +90,7 @@ footer {
       padding: 32px 0 8px 0;
       &:hover {
         font-size: 41px;
+        cursor: pointer;
         transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
       }
     }
@@ -100,13 +104,15 @@ footer {
   }
 
   .navbar {
-    padding: 40px 0 16px 0;
+
 
     &-social {
       grid-column: span 3;
       justify-self: start;
       display: flex;
       gap: 16px;
+    padding-bottom: 10px;
+
 
       .fa {
         height: 16px;
@@ -129,6 +135,8 @@ footer {
       position: fixed;
       top: 45px;
       right: 20px;
+    padding-bottom: 10px;
+
 
       span {
         display: block;
@@ -145,6 +153,8 @@ footer {
     &-search {
       display: inline-block;
       justify-self: end;
+    padding-bottom: 10px;
+
 
       img {
         height: 20px;
@@ -163,14 +173,21 @@ footer {
     display: flex;
     gap: 48px;
 
+
     a {
       text-decoration: none;
       color: $black;
       line-height: 1.75rem;
-      font-weight: 400;
-      padding: 5px;
+      font-weight: 500;
+    padding-bottom: 16px;
+
 
       &:hover {
+        color: $red;
+        border-bottom: 1px solid $red;
+        transition: all 0.3s ease-in;
+      }
+      &:active{
         color: $red;
         border-bottom: 1px solid $red;
         transition: all 0.3s ease-in;
@@ -259,6 +276,11 @@ footer {
   text-align: start;
   justify-items: start;
   align-items: flex-start;
+  img{
+  object-fit: contain;
+
+  }
+
 
   .hot-topic {
     display: grid;
@@ -267,6 +289,11 @@ footer {
     grid-template-columns: repeat(12, 1fr);
     gap: 17px;
 
+    .hot-topic-swiper{
+      display: none;
+
+
+      }
     .swiper {
       width: 100%;
       height: 100%;
@@ -274,11 +301,11 @@ footer {
       &-wrapper {
         grid-column: span 12;
       }
+     
 
       &-slide {
         height: 520px;
         overflow: scroll;
-        // align-items: center;
         justify-content: flex-start;
         gap: 20px;
         display: grid;
@@ -295,6 +322,7 @@ footer {
             height: 100%;
             border-radius: 4px;
             object-fit: cover;
+            object-position: left;
           }
 
           &-text {
@@ -340,10 +368,7 @@ footer {
             }
           }
         }
-        .fashion {
-          width: 100%;
-          grid-column: span 12;
-        }
+        
       }
     }
 
@@ -375,33 +400,43 @@ footer {
         gap: 16px;
         align-items: center;
 
-        .active {
-          color: $red;
+
+        i {
+          border: 1px solid $light-grey;
+          font-size: 1rem;
+          padding: 6px 10px;
+          color: $black;
         }
-
-        span {
+        .swiper-button-disabled {
           color: $light-grey;
-
+        }
+        .nav-link {
+          color: $light-grey;
+          border: none;
+          cursor: pointer;
           display: flex;
           gap: 8px;
+          font-size: $font-500;
+          line-height: 1.875em;
+          padding: 4px 6px;
+          background: none;
+          
 
-          i {
-            border: 1px solid $light-grey;
-            font-size: 1rem;
-            padding: 6px 10px;
-            color: $black;
-          }
-          .swiper-button-disabled {
-            color: $light-grey;
-          }
+         
+        }
+        .nav-list .active{
+          color: $red;
+
         }
       }
     }
 
     .news {
-      grid-column: 8 / span 5;
+      grid-column: 8 / 13;
       img {
         height: 100%;
+        width: 100px;
+        object-fit: cover;
       }
 
       &-links {
@@ -433,6 +468,10 @@ footer {
         }
       }
     }
+    .fashion {
+        width: 100%;
+        grid-column: span 12;
+      }
   }
 }
 .info {
@@ -604,10 +643,15 @@ footer {
     text-align: start;
     margin-top: 17px;
     position: relative;
+    &:hover{
+      transform: scale(1.03);
+    }
 
     img {
       width: 100%;
       border-radius: 4px;
+     
+     
     }
 
     &-content {
@@ -619,7 +663,7 @@ footer {
       z-index: 20;
       color: $white;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-
+      
       .tag {
         color: white;
         background: $red;
@@ -811,7 +855,7 @@ footer {
     .line {
       height: 1px;
       background-color: $light-grey;
-      width: 80%;
+      width: 60%;
     }
 
     position: relative;
@@ -1169,6 +1213,7 @@ footer {
 @media screen and (max-width: 1068px) {
   .header .navbar-menu {
     display: block;
+    transition: all 1s ease-in-out;
   }
 
   .header .logo {
@@ -1202,14 +1247,14 @@ footer {
     position: fixed;
 
     z-index: 100;
-    transform: translateX(100%);
+    transform: translateY(100%);
     visibility: hidden;
     transition: 0.4s ease-out;
     opacity: 0;
   }
 
   .active.navbar-menu {
-    transition: 0.3s ease-in;
+    transition:all 0.3s ease-in;
 
     span {
       transition: 0.3s ease-in;
@@ -1231,7 +1276,7 @@ footer {
   .active .navbar {
     transition: 0.4s ease-in-out;
 
-    transform: translateX(0%);
+    transform: translateY(0%);
     width: 100%;
     height: 100%;
     top: 0;
