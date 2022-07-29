@@ -9,15 +9,6 @@ function hamburger() {
   navBar.classList.toggle("active");
 }
 
-// function menulist() { };
-
-// js for nav list remove classlist
-// document.querySelectorAll(".nav-list a").forEach((menu) => {
-//   menu.click = () => {
-//     navBar.classList.remove("active");
-
-//   }
-// })\
 let nav = document.querySelectorAll(".nav");
 nav.forEach((menu_hide) => {
   menu_hide.addEventListener("click", hideNav);
@@ -28,27 +19,61 @@ function hideNav() {
   link.classList.toogle("active");
 }
 
-
-
-
-
-
 // Js for Tab
-function openPage(evt, pageName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("hot-topic-swiper");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("nav-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("active", "nav-link");
-  }
-  document.getElementById(pageName).style.display = "block";
-  evt.currentTarget.className += "active";
-}
-document.querySelectorAll.forEach((element) => {
-  element.addEventListener("click", openCity(evt, paris));
-});
 
-document.getElementById("defaultOpen").click();
+
+
+function example(a, b, c) {
+  var btnWrapper = document.querySelector(a);
+  var tabBtns = btnWrapper.querySelectorAll(b);
+  var tabPanes = document.querySelectorAll(c);
+  tabBtns.forEach(function (btn) {
+    btn.onclick = function () {
+      var dataTarget = this.getAttribute("data-show");
+      var targetID = document.getElementById(dataTarget);
+      tabBtns.forEach((btn) => btn.classList.remove("active"));
+      this.classList.add("active");
+      tabPanes.forEach((pane) =>
+        (pane.classList.remove('show')));
+      targetID.classList.add('show');
+
+    };
+
+  });
+}
+example('.hot-topic-title', '.nav-link', '.hot-topic-swiper');
+
+
+
+// load more Js  
+const btn = document.querySelector(".l-btn");
+const content = document.querySelector(".image-container");
+
+
+btn.addEventListener("click", function () {
+  if (btn.innerHTML === "Load More") {
+    btn.innerHTML = "show less";
+  } else {
+    btn.innerHTML = "Load More";
+  };
+
+  content.classList.toggle("active");
+
+})
+
+// image container JS
+const poping_content = document.querySelector(".popup-image");
+const popimg = document.querySelectorAll(".image-pop img");
+const close = document.querySelector(".close");
+
+popimg.forEach(function (elm) {
+  elm.addEventListener("click", function () {
+    poping_content.classList.add("active");
+    document.querySelector(".popup-image img").src = elm.getAttribute("src");
+    close.addEventListener("click", () => poping_content.classList.remove("active"));
+  });
+  
+  
+
+  
+});

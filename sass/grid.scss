@@ -70,14 +70,12 @@ footer {
 .header {
   border-bottom: 1px solid rgba(1, 13, 0, 0.08);
 
-  
   .logo {
     width: 100%;
     padding-bottom: 40px;
     grid-column: 1 / 13;
     justify-self: center;
     text-align: center;
-    
 
     h1 {
       font-size: 3.85rem;
@@ -104,15 +102,12 @@ footer {
   }
 
   .navbar {
-
-
     &-social {
       grid-column: span 3;
       justify-self: start;
       display: flex;
       gap: 16px;
-    padding-bottom: 10px;
-
+      padding-bottom: 10px;
 
       .fa {
         height: 16px;
@@ -135,8 +130,7 @@ footer {
       position: fixed;
       top: 45px;
       right: 20px;
-    padding-bottom: 10px;
-
+      padding-bottom: 10px;
 
       span {
         display: block;
@@ -153,8 +147,7 @@ footer {
     &-search {
       display: inline-block;
       justify-self: end;
-    padding-bottom: 10px;
-
+      padding-bottom: 10px;
 
       img {
         height: 20px;
@@ -173,21 +166,19 @@ footer {
     display: flex;
     gap: 48px;
 
-
     a {
       text-decoration: none;
       color: $black;
       line-height: 1.75rem;
       font-weight: 500;
-    padding-bottom: 16px;
-
+      padding-bottom: 16px;
 
       &:hover {
         color: $red;
         border-bottom: 1px solid $red;
         transition: all 0.3s ease-in;
       }
-      &:active{
+      &:active {
         color: $red;
         border-bottom: 1px solid $red;
         transition: all 0.3s ease-in;
@@ -276,24 +267,25 @@ footer {
   text-align: start;
   justify-items: start;
   align-items: flex-start;
-  img{
-  object-fit: contain;
-
+  img {
+    object-fit: contain;
   }
 
-
   .hot-topic {
+    position: relative;
     display: grid;
     grid-column: 1/8;
     align-items: flex-start;
     grid-template-columns: repeat(12, 1fr);
     gap: 17px;
 
-    .hot-topic-swiper{
+    .hot-topic-swiper {
       display: none;
-
-
-      }
+      visibility: hidden;
+      opacity: 0.3;
+      transition: 3s all ease-in;
+      transform: translateY(-100%);
+    }
     .swiper {
       width: 100%;
       height: 100%;
@@ -301,7 +293,6 @@ footer {
       &-wrapper {
         grid-column: span 12;
       }
-     
 
       &-slide {
         height: 520px;
@@ -368,7 +359,6 @@ footer {
             }
           }
         }
-        
       }
     }
 
@@ -400,7 +390,6 @@ footer {
         gap: 16px;
         align-items: center;
 
-
         i {
           border: 1px solid $light-grey;
           font-size: 1rem;
@@ -420,13 +409,10 @@ footer {
           line-height: 1.875em;
           padding: 4px 6px;
           background: none;
-          
-
-         
         }
-        .nav-list .active{
+        .nav-link.active {
           color: $red;
-
+          transform: translate3d(0, -.2em , 0);
         }
       }
     }
@@ -463,15 +449,15 @@ footer {
 
           &:hover {
             color: $red;
-            transition: all .3s ease-in;
+            transition: all 0.3s ease-in;
           }
         }
       }
     }
     .fashion {
-        width: 100%;
-        grid-column: span 12;
-      }
+      width: 100%;
+      grid-column: span 12;
+    }
   }
 }
 .info {
@@ -538,8 +524,7 @@ footer {
 
       &:hover {
         color: $red;
-        transition: all .3s ease-in;
-
+        transition: all 0.3s ease-in;
       }
     }
 
@@ -643,15 +628,14 @@ footer {
     text-align: start;
     margin-top: 17px;
     position: relative;
-    &:hover{
-      transform: scale(1.03);
+    &:hover img{
+      transform: scale(1.1);
+      transition: all .25s ease-in;
     }
 
     img {
       width: 100%;
       border-radius: 4px;
-     
-     
     }
 
     &-content {
@@ -663,7 +647,7 @@ footer {
       z-index: 20;
       color: $white;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-      
+
       .tag {
         color: white;
         background: $red;
@@ -681,8 +665,7 @@ footer {
 
         &:hover {
           color: $red;
-          transition: all .3s ease-in;
-
+          transition: all 0.3s ease-in;
         }
       }
 
@@ -758,8 +741,7 @@ footer {
 
       &:hover {
         color: $red;
-        transition: all .3s ease-in;
-
+        transition: all 0.3s ease-in;
       }
     }
   }
@@ -824,8 +806,7 @@ footer {
         border-radius: 25px 0;
         background-image: linear-gradient(to right top, red, blue);
         color: white;
-        transition: all .3s ease-in;
-
+        transition: all 0.3s ease-in;
       }
     }
   }
@@ -838,6 +819,7 @@ footer {
 
   .ov-links {
     grid-column: 1/8;
+    overflow-y: hidden;
   }
 
   &-catagory {
@@ -881,11 +863,9 @@ footer {
       color: rgba(14, 19, 43, 1);
       &:hover {
         color: $red;
-        transition: all .3s ease-in;
-
+        transition: all 0.3s ease-in;
       }
     }
-
 
     .info {
       font-size: $font-400;
@@ -977,8 +957,7 @@ footer {
       color: $white;
       &:hover {
         color: $red;
-        transition: all .3s ease-in;
-
+        transition: all 0.3s ease-in;
       }
     }
 
@@ -1013,8 +992,7 @@ footer {
         font-size: $font-400;
         &:hover {
           color: $red;
-          transition: all .3s ease-in;
-  
+          transition: all 0.3s ease-in;
         }
       }
 
@@ -1042,8 +1020,7 @@ footer {
       }
       a:hover {
         color: $red;
-        transition: all .3s ease-in;
-
+        transition: all 0.3s ease-in;
       }
     }
   }
@@ -1093,8 +1070,7 @@ footer {
 
             &:hover {
               color: $red;
-              transition: all .3s ease-in;
-      
+              transition: all 0.3s ease-in;
             }
           }
 
@@ -1112,6 +1088,99 @@ footer {
       }
     }
   }
+}
+
+// ------------------------------------------------
+// load more style
+// _________________________________________________
+.image-container{
+  grid-template-columns: repeat(auto-fit, minmax(calc(100%/4), 1fr));
+  display: none;
+margin-top: 40px;
+ transform: translateY(100%);
+ opacity: 0;
+ animation: hidekey ease-in .6s forwards;
+
+
+}
+.image-container.active{
+  padding: 10px;
+  display: grid;
+  opacity: 1;
+  transform: translateX(0);
+
+  animation: showkey ease-in .5s forwards;
+  img{
+    border-radius: 8px 8px 0 0;
+    height: 98%;
+    width: 98%;
+    &:hover{
+      transform: scale(1.2);
+      transition: all .2s ease-in;
+    }
+  }
+  
+}
+.popup-image{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0,.7);
+  display: none;
+  opacity: 0;
+  z-index: 100;
+  .close{
+    color: $white;
+    font-size: $big;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+  }
+
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 90%;
+    transform: translate(-50%,-50%);
+    object-fit: contain;
+  }
+}
+.popup-image.active{
+  display: block;
+  opacity: 1;
+  transition: 1s ease-in;
+}
+
+
+@keyframes showkey {
+  from{
+    opacity: 0;
+
+    transform: translateY(100%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+  
+}
+@keyframes hidekey {
+  from{
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+  to{
+    opacity: 0;
+    transform: translateY(100%);
+
+  }
+  
 }
 
 // footer start //////////////////
@@ -1168,7 +1237,7 @@ footer {
       &:hover {
         color: $red;
         border-bottom: 1px solid $red;
-        transition: .3s all ease-in;
+        transition: 0.3s all ease-in;
       }
     }
   }
@@ -1254,7 +1323,7 @@ footer {
   }
 
   .active.navbar-menu {
-    transition:all 0.3s ease-in;
+    transition: all 0.3s ease-in;
 
     span {
       transition: 0.3s ease-in;
@@ -1481,4 +1550,28 @@ footer {
   .wrapper .hot-topic-title .line {
     display: none;
   }
+}
+
+.wrapper .hot-topic .hot-topic-swiper.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 3s all ease-in;
+  animation: anime .4s   ease-in  1 ;
+  overflow: hidden;
+}
+@keyframes anime {
+  0%{
+    transform: translateY(-100%);
+    opacity: .4;
+    z-index: -100;
+  }
+  
+  100%{
+    // opacity: 0;
+    transform: translateY(0);
+    z-index: 100;
+  }
+  
 }
