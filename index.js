@@ -7,16 +7,16 @@ let link = document.querySelector(".nav-list");
 function hamburger() {
   menu.classList.toggle("active");
   navBar.classList.toggle("active");
-}
+  link.classList.toggle("active");
 
-let nav = document.querySelectorAll(".nav");
-nav.forEach((menu_hide) => {
-  menu_hide.addEventListener("click", hideNav);
-});
+};
 
+link.addEventListener("click", hamburger);
 function hideNav() {
   navBar.classList.remove("active");
   link.classList.toogle("active");
+  menu.classList.remove("active");
+
 }
 
 // Js for Tab

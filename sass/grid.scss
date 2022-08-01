@@ -1,6 +1,8 @@
 @import "variable", "media";
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&family=Poppins:wght@400;500;600&family=Roboto+Slab:wght@500&family=Yeseva+One&display=swap");
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -114,13 +116,8 @@ footer {
         width: 16px;
         color: $light-grey;
 
-        &-facebook:hover {
-          color: #3471eb;
-        }
-
         &:hover {
           cursor: pointer;
-          color: $red;
           transition: all 0.3s ease-in;
         }
       }
@@ -128,8 +125,8 @@ footer {
 
     &-menu {
       position: fixed;
-      top: 45px;
-      right: 20px;
+      // top: 45px;
+      // right: 20px;
       padding-bottom: 10px;
 
       span {
@@ -272,6 +269,7 @@ footer {
   }
 
   .hot-topic {
+    overflow-y: hidden;
     position: relative;
     display: grid;
     grid-column: 1/8;
@@ -281,9 +279,8 @@ footer {
 
     .hot-topic-swiper {
       display: none;
-      visibility: hidden;
       opacity: 0.3;
-      transition: 3s all ease-in;
+      transition: 3s transform ease-in;
       transform: translateY(-100%);
     }
     .swiper {
@@ -390,12 +387,14 @@ footer {
         gap: 16px;
         align-items: center;
 
-        i {
+        .fa {
           border: 1px solid $light-grey;
           font-size: 1rem;
           padding: 6px 10px;
           color: $black;
+          cursor: pointer;
         }
+
         .swiper-button-disabled {
           color: $light-grey;
         }
@@ -412,7 +411,7 @@ footer {
         }
         .nav-link.active {
           color: $red;
-          transform: translate3d(0, -.2em , 0);
+          transform: translate3d(0, -0.2em, 0);
         }
       }
     }
@@ -524,7 +523,7 @@ footer {
 
       &:hover {
         color: $red;
-        transition: all 0.3s ease-in;
+        transition: color 0.3s ease-in;
       }
     }
 
@@ -581,6 +580,7 @@ footer {
 
         .fa {
           margin-right: 10px;
+          cursor: pointer;
         }
       }
     }
@@ -618,6 +618,7 @@ footer {
       padding: 6px 10px;
       border: 1px solid $black;
       color: $black;
+      cursor: pointer;
     }
     .swiper-button-disabled {
       color: $light-grey;
@@ -628,9 +629,9 @@ footer {
     text-align: start;
     margin-top: 17px;
     position: relative;
-    &:hover img{
+    &:hover img {
       transform: scale(1.1);
-      transition: all .25s ease-in;
+      transition: all 0.25s ease-in;
     }
 
     img {
@@ -894,7 +895,7 @@ footer {
   .btn {
     position: relative;
     color: $red;
-    border: 1px solid $red;
+    border: .5px solid $red;
     border-radius: 16px;
     padding: 20px 56px;
     font-size: $font-600;
@@ -903,13 +904,59 @@ footer {
     line-height: 1.5rem;
     background-color: $white;
     margin-top: 126px;
+    // overflow: hidden;
 
+    &::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      background-color: #9bf572;
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      top: 0;
+      border-radius: 16px;
+      transform-origin: top;
+      transform: rotateX(270deg);
+      transition: transform 0.4s linear;
+      transition-delay: 0.2s;
+    }
     &:hover {
-      cursor: pointer;
-      font-size: 20px;
-      border-radius: 25px 0;
-      background-image: linear-gradient(to right top, red, blue);
-      color: white;
+      border: unset;
+    }
+    &::before {
+      content: "";
+      height: 100%;
+    border: .5px solid #72c1f5;
+
+      width: 100%;
+      background-color: #72c1f5;
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      top: 0;
+      transition: transform 0.4s ease-out;
+      border-radius: 16px;
+      transform-origin: bottom;
+      transform: rotateX(270deg);
+    }
+    span {
+      position: relative;
+      z-index: 5;
+    }
+
+    &:hover::after {
+      color: #fff;
+      transform: rotateX(0deg);
+      transition-delay: .2s;
+    }
+    &:hover::before {
+      transform: rotateX(0deg);
+      transition-delay: .6s;
+    }
+    &:hover span {
+      color: #fff;
+      transition: all 1s ease-out;
     }
   }
 
@@ -1093,45 +1140,42 @@ footer {
 // ------------------------------------------------
 // load more style
 // _________________________________________________
-.image-container{
-  grid-template-columns: repeat(auto-fit, minmax(calc(100%/4), 1fr));
+.image-container {
+  grid-template-columns: repeat(auto-fit, minmax(calc(100% / 4), 1fr));
   display: none;
-margin-top: 40px;
- transform: translateY(100%);
- opacity: 0;
- animation: hidekey ease-in .6s forwards;
-
-
+  margin-top: 40px;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 1s transform ease-in;
 }
-.image-container.active{
+.image-container.active {
   padding: 10px;
   display: grid;
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 
-  animation: showkey ease-in .5s forwards;
-  img{
+  animation: showkey ease-in 0.5s forwards;
+  img {
     border-radius: 8px 8px 0 0;
     height: 98%;
     width: 98%;
-    &:hover{
+    &:hover {
       transform: scale(1.2);
-      transition: all .2s ease-in;
+      transition: all 0.2s ease-in;
     }
   }
-  
 }
-.popup-image{
+.popup-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0,.7);
+  background: rgba(0, 0, 0, 0.7);
   display: none;
   opacity: 0;
   z-index: 100;
-  .close{
+  .close {
     color: $white;
     font-size: $big;
     position: absolute;
@@ -1140,47 +1184,40 @@ margin-top: 40px;
     cursor: pointer;
   }
 
-  img{
+  img {
     position: absolute;
     top: 50%;
     left: 50%;
     height: 90%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     object-fit: contain;
   }
 }
-.popup-image.active{
+.popup-image.active {
   display: block;
   opacity: 1;
-  transition: 1s ease-in;
+  transition: 1s transform ease-in;
 }
-
 
 @keyframes showkey {
-  from{
-    opacity: 0;
+  from {
 
     transform: translateY(100%);
   }
-  to{
-    opacity: 1;
+  to {
     transform: translateY(0);
-
   }
-  
 }
 @keyframes hidekey {
-  from{
+  from {
     opacity: 1;
 
     transform: translateY(0);
   }
-  to{
+  to {
     opacity: 0;
     transform: translateY(100%);
-
   }
-  
 }
 
 // footer start //////////////////
@@ -1281,6 +1318,10 @@ footer {
 
 @media screen and (max-width: 1068px) {
   .header .navbar-menu {
+    position: fixed;
+    top: 10%;
+    right: 20%;
+    z-index: 100;
     display: block;
     transition: all 1s ease-in-out;
   }
@@ -1299,7 +1340,7 @@ footer {
   }
 
   .container {
-    padding: 0 15px;
+    padding: 0 90px;
   }
 
   .grid {
@@ -1309,21 +1350,34 @@ footer {
   // reponsive navbar -----------------
 
   .navbar {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background: $red;
-    width: 100%;
+    width: 100vw;
     position: fixed;
-
+    top: 10px;
     z-index: 100;
-    transform: translateY(100%);
-    visibility: hidden;
-    transition: 0.4s ease-out;
+    transform: translateY(-100%);
+    transition:all .4s linear;
     opacity: 0;
   }
-
+  .header .navbar-social {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    right: 50%;
+    .fa {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
   .active.navbar-menu {
-    transition: all 0.3s ease-in;
+    left: 10%;
+
+    transition: transform 0.3s ease-in;
 
     span {
       transition: 0.3s ease-in;
@@ -1334,30 +1388,28 @@ footer {
 
       &:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
+        background-color: $white;
+        transition: 0.3s transform ease-in;
       }
 
       &:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
+        background-color: $white;
+        transition: 0.3s transform ease-in;
       }
     }
   }
 
   .active .navbar {
-    transition: 0.4s ease-in-out;
+    transition: 0.3s transform ease-in-out;
 
     transform: translateY(0%);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
     opacity: 1;
     visibility: visible;
   }
 
   .header {
-    navbar-social {
-      gap: 40px;
-    }
+   
 
     .navbar-search {
       display: none;
@@ -1365,14 +1417,15 @@ footer {
   }
 
   .navbar .nav-list {
-    height: 100%;
-    display: flex;
-    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50% -50%);
     font-size: 1.5rem;
+    text-align: start;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 10px;
+    padding: 0;
 
     a {
       color: $white;
@@ -1439,6 +1492,8 @@ footer {
     height: auto;
     background-size: cover;
     border-radius: 5px;
+    padding: 9px ;
+    background-position: right;
   }
 
   // overview section
@@ -1456,6 +1511,9 @@ footer {
   }
   .hero {
     display: block;
+    img{
+      width: 100%;
+    }
   }
   .wrapper {
     .hot-topic .swiper {
@@ -1496,12 +1554,17 @@ footer {
     width: 100vw;
   }
 
-  // fpor gallery -----------------------------------
+  // for gallery -----------------------------------
   .gallery .card1,
   .gallery .card2,
   .gallery .card3,
   .gallery .card4 {
     grid-column: span 12;
+    // aspect-ratio: 16/9;
+    img{
+      aspect-ratio: 16/12;
+      object-fit: cover;
+    }
   }
 
   .gallery-card img {
@@ -1521,15 +1584,25 @@ footer {
 }
 
 @media (max-width: 500px) {
-  .footer-nav {
-    flex-direction: column;
+  html{
+    font-size: 12px;
   }
-
+  .footer-nav {
+    margin-top: 30px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .container{
+    padding: 0 30px;
+  }
+.advertisement{
+  background-position: left;
+}
   .copyright {
     flex-direction: column;
     gap: 10px;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
   }
 
   .overview {
@@ -1539,6 +1612,9 @@ footer {
 
       img {
         width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        object-position: top;
       }
     }
 
@@ -1550,6 +1626,14 @@ footer {
   .wrapper .hot-topic-title .line {
     display: none;
   }
+  
+.gallery-card{
+
+  img{
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  }
 }
 
 .wrapper .hot-topic .hot-topic-swiper.show {
@@ -1557,21 +1641,111 @@ footer {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
-  transition: 3s all ease-in;
-  animation: anime .4s   ease-in  1 ;
+  animation: anime .2s   linear  1 ;
   overflow: hidden;
 }
 @keyframes anime {
-  0%{
+  0% {
     transform: translateY(-100%);
-    opacity: .4;
-    z-index: -100;
+    opacity: 0.4;
   }
-  
-  100%{
-    // opacity: 0;
+
+  100% {
     transform: translateY(0);
     z-index: 100;
   }
+}
+
+// social media style animation
+.navbar-social {
   
+  span {
+    display: none;
+    font-size: 16px;
+    margin-left: 6px;
+    font-weight: 500;
+  
+    transform: translateX(-100%);
+    animation: tran .5s 1;
+
+  }
+  @keyframes tran {
+    from{
+    transform: scale(1.5);
+
+    }
+    to{
+    transform: scale(1);
+      
+
+    }
+    
+  }
+  .facebook:hover .fa {
+    color: #1877f2;
+  }
+  .facebook:hover > span {
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0%);
+    transition: transform 3s  linear;
+    color: #1877f2;
+  }
+  .facebook:hover {
+    border: 1px solid #1877f2;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: $white;
+    transition: transform 3s  linear;
+
+  }
+  // INSATGRAM
+  .instagram:hover .fa {
+    color: $red;
+  }
+  .instagram:hover > span {
+    display: inline-block;
+    transform: translateX(0%);
+
+    color: $red;
+  }
+  .instagram:hover {
+    border: 1px solid $red;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: $white;
+  }
+  // linkedin
+  .linkedin:hover .fa {
+    color: #0a66c2;
+  }
+  .linkedin:hover > span {
+    display: inline-block;
+    transform: translateX(0%);
+
+    color: #0a66c2;
+  }
+  .linkedin:hover {
+    border: 1px solid #0a66c2;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: $white;
+  }
+  // twitter
+  .twitter:hover .fa {
+    color: #0a66c2;
+  }
+  .twitter:hover > span {
+    display: inline-block;
+    transform: translateX(0%);
+
+    color: #0a66c2;
+  }
+  .twitter:hover {
+    border: 1px solid #0a66c2;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: $white;
+  }
 }

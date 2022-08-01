@@ -18,7 +18,7 @@ var swiper = new Swiper(".gallery-swiper", {
   breakpoints: {
    
     // when window width is >= 320px
-    300: {
+    200: {
       slidesPerView: 1,
       spaceBetween: 20,
     },
