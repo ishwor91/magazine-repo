@@ -3,26 +3,18 @@ menu.addEventListener("click", hamburger);
 let navBar = document.querySelector(".header");
 let link = document.querySelector(".nav-list");
 // navBar.addEventListener("click", menulist);
-
 function hamburger() {
   menu.classList.toggle("active");
   navBar.classList.toggle("active");
   link.classList.toggle("active");
-
 };
-
 link.addEventListener("click", hamburger);
 function hideNav() {
   navBar.classList.remove("active");
   link.classList.toogle("active");
   menu.classList.remove("active");
-
 }
-
 // Js for Tab
-
-
-
 function example(a, b, c) {
   var btnWrapper = document.querySelector(a);
   var tabBtns = btnWrapper.querySelectorAll(b);
@@ -36,15 +28,10 @@ function example(a, b, c) {
       tabPanes.forEach((pane) =>
         (pane.classList.remove('show')));
       targetID.classList.add('show');
-
     };
-
   });
 }
 example('.hot-topic-title', '.nav-link', '.hot-topic-swiper');
-
-
-
 // load more Js  
 const btn = document.querySelector(".l-btn");
 const content = document.querySelector(".image-container");
@@ -56,9 +43,7 @@ btn.addEventListener("click", function () {
   } else {
     btn.innerHTML = "Load More";
   };
-
   content.classList.toggle("active");
-
 })
 
 // image container JS
@@ -72,8 +57,4 @@ popimg.forEach(function (elm) {
     document.querySelector(".popup-image img").src = elm.getAttribute("src");
     close.addEventListener("click", () => poping_content.classList.remove("active"));
   });
-  
-  
-
-  
 });
